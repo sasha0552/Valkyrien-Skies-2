@@ -1,0 +1,28 @@
+name: Build
+
+on:
+  - push
+  - workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Shallow Clone (--recurse-submodules)
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup Gradle & Caches
+        uses: "./.github/actions/setup-gradle"
+
+      - name: Build
+        run: ./gradlew build --no-daemon --stacktrace
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          path: |
+            fabric/build/libs
+            forge/build/libs
