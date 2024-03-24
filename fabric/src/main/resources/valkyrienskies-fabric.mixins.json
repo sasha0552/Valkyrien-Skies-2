@@ -6,7 +6,6 @@
     "compat.create.MixinBlockBreakingKineticTileEntity",
     "compat.create.MixinBlocks",
     "compat.create.MixinControlledContraptionEntity",
-    "compat.sodium.MixinRenderSectionManager",
     "feature.explosions.ClipContextMixin",
     "server.network.MixinServerGamePacketListenerImpl",
     "server.network.MixinServerPlayerGameMode",
